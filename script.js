@@ -10,6 +10,7 @@ const generateJoke = () => {
       if (this.status === 200) {
         joke.innerHTML = JSON.parse(this.responseText).quote;
       } else {
+        joke.innerHTML = "Something went wrong (Not Funny)";
       }
     }
   };
@@ -17,3 +18,4 @@ const generateJoke = () => {
 };
 
 jokeBtn.addEventListener("click", generateJoke);
+document.addEventListener("DOMContentLoaded", generateJoke);
